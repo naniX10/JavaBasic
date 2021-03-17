@@ -125,5 +125,6 @@ public class Ex01 {
 		result2 = 1 - (1 - (1 - (1 - (1 - n))));
 		System.out.println("1 - (1 - (1 - (1 - (1 - n)))) = " + result2);
 
+		
 	}
 }
