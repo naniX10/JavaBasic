@@ -1,4 +1,4 @@
-package KTY.basic.day02;
+package KTY.basic.day03;
 
 import java.util.Scanner;
 
@@ -7,14 +7,14 @@ import java.util.Scanner;
  * 
  * @author KTY
  * @category javabasic
- * @version 1.1 자바기초프로그램 - 성적처리프로그램
+ * @version 1.2 자바기초프로그램 - 성적처리프로그램
  * 
  * 
  *          이름과 성적 데이터를 키보드로 직접 입력받아 처리 처리결과 출력시 printf 메서드 사용
  * 
  */
 
-public class SungJukV1b {
+public class SungJukV1c {
 	public static void main(String[] args) {
 
 		// 변수선언
@@ -46,13 +46,13 @@ public class SungJukV1b {
 		mat = sc.nextInt();
 		// 키보드로 숫자데이터를 입력받아 mat 변수에 대입
 
-		// 총점, 평균 처리
+		// 총점, 평균, 학점 처리
 
 		sum = kor + eng + mat;
 
-		avg = sum / 3;
+		avg = (double) sum / 3; // 소수점 나오게 하려면 앞에 double 추가 하던가 3.0으로 표현해야
 
-		grd = '미';
+		grd = (avg >= 90) ? '수' : (avg >= 80) ? '우' : (avg >= 70) ? '미' : (avg >= 60) ? '양' : '가';
 
 		// 출력
 		// 이름 : ??, 국어 : ??, 영어 : ??, 수학 : ??
@@ -61,7 +61,7 @@ public class SungJukV1b {
 
 		System.out.printf(fmt, name, kor, eng, mat);
 
-		fmt = "총점 : %d, 평균 : %.1f, 학점 : %c";
+		fmt = "총점 : %d, 평균 : %.1f, 학점 : %c \n";
 		System.out.printf(fmt, sum, avg, grd);
 
 	}
