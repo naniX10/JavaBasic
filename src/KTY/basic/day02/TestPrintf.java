@@ -30,5 +30,8 @@ public class TestPrintf {
 		// printf 를 이용하는 또 다른 방법
 		String fmt = "x = %d and pi = %f \n";
 		System.out.printf(fmt, x, pi);
+
+		// %d > 정수, %f > 실수, %c > 문자 하나, %s > 문자 여러개?
+
 	}
 }
