@@ -1,5 +1,7 @@
 package KTY.basic.day03;
 
+import java.util.Scanner;
+
 public class ex02 {
 	public static void main(String[] args) {
 		// 7.
@@ -82,6 +84,66 @@ public class ex02 {
 		System.out.println(true && false && true || true);
 
 		System.out.println(true || true && true && false);
+
+		System.out.println((true && false) || (true && !false) || (false && !false));
+		System.out.println((2 < 3) || (5 > 2) && !(4 == 4) || 9 != 4);
+		System.out.println(6 == 9 || 5 < 6 && 8 < 4 || 4 > 3);
+
+		// 10.
+		System.out.println(27 / 13 + 4);
+
+		System.out.println(27 / 13 + 4.0);
+
+		System.out.println(42.7 % 3 + 18);
+
+		// System.out.println((3 < 4) && 5 / 8);
+
+		System.out.println(23 / 5 + 23 / 5.0);
+
+		System.out.println(2.0 + 'a');
+
+		System.out.println(2 + 'a');
+
+		System.out.println('a' + 'b');
+
+		System.out.println('a' / 'b');
+
+		// System.out.println('a' && ! 'b');
+
+		System.out.println((double) 'a' / 'b');
+
+		// 11.
+		String name;
+		double weight;
+		int age;
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("이름?");
+		name = sc.next();
+
+		System.out.println("몸무게?");
+		weight = sc.nextDouble();
+
+		System.out.println("나이?");
+		age = sc.nextInt();
+
+		String rmt = "이름 : %s , 몸무게 : %.1f , 나이 : %d ";
+		System.out.printf(rmt, name, weight, age);
+
+		System.out.println("      ");
+		System.out.println("      ");
+		System.out.println("      ");
+		System.out.println("      ");
+
+		// 12.
+
+		int yyyymmdd;
+
+		Scanner sca = new Scanner(System.in);
+
+		System.out.println("생년월일은? ex)19000101");
+		yyyymmdd = sca.nextInt();
 
 	}
 }

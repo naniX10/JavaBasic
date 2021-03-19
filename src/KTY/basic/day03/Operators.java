@@ -8,15 +8,6 @@ public class Operators {
 		// 이것을 사용함에 따라 수학기호를 따로 표시하든지
 		// 붙여서 표현하든지 결정할 수 있음
 		// 가능 폰트 : d2coding, cascadia
-		System.out.println('A' + 'B');
-		System.out.println('B' + 'C');
-		System.out.println(100 + 'M');
-		System.out.println('A' + 'Z');
-		System.out.println('A' + 'Z');
-
-		System.out.println("    ");
-
-		System.out.println('H' + 'I');
 
 		System.out.println("    ");
 		// 연산자 operator
