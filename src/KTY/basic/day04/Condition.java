@@ -19,6 +19,8 @@ public class Condition {
 		// // 조건이 거짓일때 코드 실행
 		// }
 
+		// if 문이 한줄일때는 { } 생략함! / 더 복잡해지면 { } 사용!
+
 		// ex) 1~100 사이 정수 중 짝수를 출력하세요
 		for (int i = 1; i <= 100; i += 1) {
 			if (i % 2 == 0) // i가 짝수라면
@@ -67,8 +69,6 @@ public class Condition {
 
 		String fmt = " 연봉은 %d 이고, 결혼여부는 %d 일때 \n" + "세금은 %.4f 입니다";
 		System.out.printf(fmt, salary, isMarried, tax);
-
-		// Scanner sc = new Scanner(System.in);
 
 	} // static
 
