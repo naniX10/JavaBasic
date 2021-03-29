@@ -1,27 +1,31 @@
-package KTY.basic.day09;
+package kty.basic.day10;
+
 
 public class StarCraft2 {
+
+    // 인터페이스 기반으로 스타크래프트의 유닛을 정의해 봄
+
     public static void main(String[] args) {
 
-        SCV s = new SCV();
+        SCV2 s = new SCV2();
         System.out.println( "SCV의 체력" + s.hp );
         s.atteck();
         s.move();
         s.specialAbility();
 
-        marine m = new marine();
+        marine2 m = new marine2();
         System.out.println( "해병의 체력" + m.hp );
         m.atteck();
         m.move();
         m.specialAbility();
 
-        firebat f = new firebat();
+        firebat2 f = new firebat2();
         System.out.println( "화염방사병의 체력" + f.hp );
         f.atteck();
         f.move();
         f.specialAbility();
 
-        medic me = new medic();
+        medic2 me = new medic2();
         System.out.println( "의무병의 체력" + me.hp );
         me.atteck();
         me.move();
@@ -52,19 +56,31 @@ abstract class unit2 {
 //
 //        }
 
-    abstract public void atteck();
+//    abstract public void atteck();
+//    abstract public void move();
+//    abstract public void specialAbility();
+
+}
+
+// 추상클래스에서 정의했던 추상메서드를
+// 독립적인 코드들로 분리함 -> 인터페이스
+
+interface Unit2Action{
+    abstract public void atteck(); // void 앞의 글자들은 생략 가능!
     abstract public void move();
     abstract public void specialAbility();
-
-}
-interface msg{
-    void at();
-    void mo();
-    void sp();
 }
 
 
-class SCV2 extends unit2 implements msg {
+
+
+class SCV2 extends unit2 implements Unit2Action {
+
+    final String attmsg = "이 유닛은 융합 절단기으로 %d의 피해를 입힙니다\n";
+    final String movmsg = "이 유닛은 %.2f의 이동속도를 가지고 있습니다\n";
+    final String spabmsg = "이 유닛은 자원채취를 할 수 있으며,\n" +
+            "테란의 건물들을 건설, 수리할 수 있습니다\n";
+
 
 
     public SCV2() {
@@ -77,17 +93,17 @@ class SCV2 extends unit2 implements msg {
     }
 
     @Override
-    public void at() {
+    public void atteck() {
         System.out.printf("이 유닛은 융합 절단기로 %d의 피해를 입힙니다\n", attpo);
     }
 
     @Override
-    public void mo() {
+    public void move() {
         System.out.printf("이 유닛은 %2f의 이동 속도를 가지고 있습니다\n", movsp);
     }
 
     @Override
-    public void sp() {
+    public void specialAbility() {
         System.out.println("이 유닛은 자원채취를 할 수 있으며,\n" +
                 "테란의 건물들을 건설, 수리할 수 있습니다\n");
     }
@@ -99,26 +115,11 @@ class SCV2 extends unit2 implements msg {
 //    }
 
 
-    @Override
-    public void atteck() {
-        // sout(이 유닛은 융합 절단기로...")
-        // 추상메서드를 이용해서 부모클래스에 정의된
-        // attack 메서드를 유닛에 맞게 재정의함
-     //   System.out.printf(attmsg, attpo);
-    }
 
-    @Override
-    public void move() {
-    //    System.out.printf(movmsg, movsp);
-    }
-
-    @Override
-    public void specialAbility() {
-     //   System.out.println(spabmsg);
-    }
 
 } // scv
-class marine2 extends unit2 {
+
+class marine2 extends unit2 implements Unit2Action{
 
     final String attmsg = "이 유닛은 가우스 소총으로 %d의 피해를 입힙니다\n";
     final String movmsg = "이 유닛은 %.2f의 이동속도를 가지고 있습니다\n";
@@ -152,7 +153,7 @@ class marine2 extends unit2 {
     }
 } // marine
 
-class firebat2 extends unit2 {
+class firebat2 extends unit2 implements Unit2Action {
 
     final String attmsg = "이 유닛은 화염방사로 %d의 피해를 입힙니다\n";
     final String movmsg = "이 유닛은 %.2f의 이동속도를 가지고 있습니다\n";
@@ -187,7 +188,7 @@ class firebat2 extends unit2 {
     }
 }// firebat
 
-class medic2 extends unit2{
+class medic2 extends unit2 implements Unit2Action{
 
     final String attmsg = "이 유닛은 공격할 수 없습니다\n";
     final String movmsg = "이 유닛은 %.2f의 이동속도를 가지고 있습니다\n";

@@ -1,14 +1,14 @@
-package KTY.basic.sungjuk;
+package kty.basic.sungjuk;
 
 public class SungJukVO {
 
-    private String name;
-    private int kor;
-    private int eng;
-    private int mat;
-    private int sum;
-    private double avg;
-    private char grd;
+    protected String name;
+    protected int kor;
+    protected int eng;
+    protected int mat;
+    protected int sum;
+    protected double avg;
+    protected char grd;
 
 
     public SungJukVO(String name, int kor, int eng, int mat) {
