@@ -75,4 +75,16 @@ public class SungJukVO {
     public void setGrd(char grd) {
         this.grd = grd;
     }
-}
+
+    @Override
+    public String toString() {
+
+        String fmt = "{이름 : '%s', 국어 : %d, 영어 : %d, 수학 : %d\n" +
+                "총점 : %d, 평균 : %.1f, 등급 : '%c' \n}";
+        String result = String.format(fmt, name, kor, eng, mat, sum, avg, grd);
+
+        return result;
+    }
+
+} // clsSJVO
+

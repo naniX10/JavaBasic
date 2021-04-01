@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class SungJukServiceImpl implements SungJukService {
 
+
+
+
     // 싱글톤 패턴 시작
     private static SungJukService sjsrv = null;
 
