@@ -43,6 +43,7 @@ public class SungJukServiceV2Impl implements SungJukServiceV2 {
                         " 작업을 선택하세요 :";
 
         System.out.print(displaymenu);
+
     }
 
     @Override
