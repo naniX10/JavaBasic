@@ -23,6 +23,7 @@ public class HelloJDBC {
 
 
 
+
         // 1. JDCB 드라이버를 메모리에 초기화함
         try {
             Class.forName(drv);
@@ -44,12 +45,13 @@ public class HelloJDBC {
         // 3. vmware에 구축된 오라클 서버 접속 테스트
 
 
+
         try {
             Class.forName(oradrv);
         } catch(ClassNotFoundException ex) {
             System.out.println("드라이버를 확인 하세요!!");
         }
-        // 이럴수가... pwd는 다 동일해서 위에 orapwd가 필요없었다...
+
         try (
                 Connection conn = DriverManager.getConnection(oraurl, orausr, orapwd);
         ) {
@@ -61,6 +63,7 @@ public class HelloJDBC {
         }
 
         // 4. vmware에 구축된 postgresql 서버 접속 테스트
+
 
 
         try {
